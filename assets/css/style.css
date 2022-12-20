@@ -23,3 +23,39 @@ header {
     margin: 10px 0px;
     
 }
+
+.forecast {
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.forecast-card {
+    display:flex;
+    flex-direction: row;
+}
+
+.card {
+    margin-right: 20px;
+}
+
+.whole-page {
+    display:flex;
+    flex-direction: row;
+}
+
+.current-city {
+    border: solid;
+    padding: 5px;
+}
+
+.search-hx {
+    list-style-type: none;
+    border-top: solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+.search-hx li {
+    margin: 20px 0px 20px 0px;
+}

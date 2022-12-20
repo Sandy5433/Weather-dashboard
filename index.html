@@ -11,27 +11,36 @@
 
 <body>
 
-    <header>
+  <header>
         Weather Dashboard
-    </header>
+  </header>
 
+  <section class="whole-page">
 
-    <section class="search-column">
+  <section class="search-column">
       <form id="search-form">
         <label for="city-input">Search for a City:</label>
         <input id="city-input" type="text" placeholder="Enter City name">
         <button id="search-btn">Search</button>
       </form>
-    </section>
+      <ul class="search-hx">
+          <li><button>History1</button></li>
+          <li>History2</li>
+      </ul>
+  </section>
 
-    <section>
+  <section class="main-content">
+    <section class="current-city">
       <h1 id="city-name">Atlanta (09/13/2022)</h1>
       <p id="city-temp">Temp:</p>
       <p id="city-wind">Wind:</p>
       <p id="city-humid">Humidity:</p>
     </section>
 
-    <section>
+    <section class = "forecast">
+      
+      <h3>5-Day Forecast:</h3>
+      <div class="forecast-card">
       <div class="card" style="width: 18rem;">
         <h5 id="day1" class="card-title">Card title</h5>
         <img id="day1-icon" src="..." class="card-img-top" alt="...">
@@ -40,9 +49,51 @@
           <li id="day1-wind" class="list-group-item">A second item</li>
           <li id="day1-humid" class="list-group-item">A third item</li>
         </ul>
-        
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <h5 id="day2" class="card-title">Card title</h5>
+        <img id="day2-icon" src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li id="day2-temp" class="list-group-item">An item</li>
+          <li id="day2-wind" class="list-group-item">A second item</li>
+          <li id="day2-humid" class="list-group-item">A third item</li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <h5 id="day3" class="card-title">Card title</h5>
+        <img id="day3-icon" src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li id="day3-temp" class="list-group-item">An item</li>
+          <li id="day3-wind" class="list-group-item">A second item</li>
+          <li id="day3-humid" class="list-group-item">A third item</li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <h5 id="day4" class="card-title">Card title</h5>
+        <img id="day4-icon" src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li id="day4-temp" class="list-group-item">An item</li>
+          <li id="day4-wind" class="list-group-item">A second item</li>
+          <li id="day4-humid" class="list-group-item">A third item</li>
+        </ul>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <h5 id="day5" class="card-title">Card title</h5>
+        <img id="day5-icon" src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li id="day5-temp" class="list-group-item">An item</li>
+          <li id="day5-wind" class="list-group-item">A second item</li>
+          <li id="day5-humid" class="list-group-item">A third item</li>
+        </ul>
+      </div>
       </div>
     </section>
+  </section>
+</section>
 
 
 

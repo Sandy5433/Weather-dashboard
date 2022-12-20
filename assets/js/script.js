@@ -3,6 +3,7 @@ var apiKey = "1697f7e4b142152e057d9e0cb55044b3";
 var searchBtn = document.getElementById("search-btn")
 var searchForm = document.getElementById("search-form");
 
+//fetch API for weather of chosen city
 function searchFormSubmit(event){
     event.preventDefault();
     var userCityInput = document.getElementById("city-input").value;
@@ -19,8 +20,8 @@ function searchFormSubmit(event){
     var cityHumid = document.getElementById("city-humid")
     cityH1.textContent = userCityInput
     cityTemp.textContent = "Temp: " + data.main.temp + "C"
-    cityWind.textContent = "Wind speed: " + data.wind.speed
-    cityHumid.textContent = "Humidity: " + data.main.humidity
+    cityWind.textContent = "Wind speed: " + data.wind.speed + "MPH"
+    cityHumid.textContent = "Humidity: " + data.main.humidity + "%"
     getForecast();
     })
 }
