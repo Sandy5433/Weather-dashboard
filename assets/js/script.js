@@ -2,6 +2,7 @@
 var apiKey = "1697f7e4b142152e057d9e0cb55044b3";
 var searchBtn = document.getElementById("search-btn")
 var searchForm = document.getElementById("search-form");
+var cities = JSON.parse(localStorage.getItem("savedCity")) || [];
 
 //fetch API for weather of chosen city
 function searchFormSubmit(event){
@@ -23,9 +24,48 @@ function searchFormSubmit(event){
     cityWind.textContent = "Wind speed: " + data.wind.speed + "MPH"
     cityHumid.textContent = "Humidity: " + data.main.humidity + "%"
     getForecast();
+    saveToLocal();
     })
 }
 
+function saveToLocal(){
+    var userCityInput = document.getElementById("city-input").value;
+    console.log(userCityInput)
+    cities.push(userCityInput)
+
+    localStorage.setItem("savedCity", JSON.stringify(cities))
+    printHistory()
+}
+
+function printHistory() {            
+        var historyUl = document.querySelector(".search-hx");
+        historyUl.innerHTML = ""
+
+        var savedCity = JSON.parse(localStorage.getItem("savedCity"));
+
+        for(i = 0; i < savedCity.length; i++) {
+            var newLi = document.createElement("li");
+            var newButton = document.createElement("button");
+    
+            newButton.textContent = savedCity[i];
+            newButton.addEventListener("click", function(event) {
+                console.log(event.target.textContent)
+                document.getElementById("city-input").value = event.target.textContent;
+                searchBtn.click()
+            })
+
+            
+            newLi.append(newButton);
+            historyUl.append(newLi)
+        }
+
+        // <li></li>
+        // <button>Canberra</button>
+        // <li><button>Canberra</button></li>
+        
+
+        // newLi.innerHTML = "<button>" + savedCity + "</button>";
+}
 
 searchForm.addEventListener("submit", searchFormSubmit);
 
@@ -51,3 +91,6 @@ function getForecast (){
 })
 }
 
+
+
+printHistory()
